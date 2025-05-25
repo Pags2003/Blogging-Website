@@ -9,6 +9,8 @@ export default function CreatePost() {
 
   const navigate = useNavigate();  
 
+
+  // Handle form submission to create a new post
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -20,7 +22,7 @@ export default function CreatePost() {
       setLoading(false);
       return;
     }
-
+  // Prepare post data
     const postData = {
       title,
       content,
@@ -52,6 +54,8 @@ export default function CreatePost() {
     }
     setLoading(false);
   };
+
+
 
   return (
     <div className="p-6 max-w-xl mx-auto">

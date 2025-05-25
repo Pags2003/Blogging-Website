@@ -11,6 +11,8 @@ export default function Login() {
 
   const [error, setError] = useState("");
 
+
+// Function to handle input changes
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
@@ -18,6 +20,8 @@ export default function Login() {
     }));
   };
 
+
+// Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -58,6 +62,9 @@ export default function Login() {
       setError("Error connecting to server");
     }
   };
+
+
+
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">

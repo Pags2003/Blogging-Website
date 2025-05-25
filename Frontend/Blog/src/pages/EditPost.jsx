@@ -136,12 +136,11 @@ export default function EditBlog() {
             className="space-y-6"
           >
             <div>
-              <label className="block mb-2 font-semibold" htmlFor="title">
+              <label className="block mb-2 font-semibold" >
                 Title
               </label>
               <input
                 type="text"
-                id="title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -150,11 +149,10 @@ export default function EditBlog() {
             </div>
 
             <div>
-              <label className="block mb-2 font-semibold" htmlFor="content">
+              <label className="block mb-2 font-semibold" >
                 Content
               </label>
               <textarea
-                id="content"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 rows={8}

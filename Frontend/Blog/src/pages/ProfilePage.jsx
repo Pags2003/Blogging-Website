@@ -6,6 +6,8 @@ export default function Profile() {
   const [posts, setPosts] = useState([]);
   const token = JSON.parse(localStorage.getItem("user"))?.token;
 
+
+  // Fetch user data and posts when the component mounts
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -28,13 +30,19 @@ export default function Profile() {
     fetchData();
   }, [token]);
 
+
+
   if (!userData) return <div className="text-center mt-10">Loading...</div>;
 
   const totalLikes = posts.reduce((acc, post) => acc + (post.likes_count || 0), 0);
-  const totalViews = posts.reduce((acc, post) => acc + (post.views || 0)/2, 0);
+  const totalViews = posts.reduce((acc, post) => acc + (post.views || 0), 0);
+
+
 
   return (
     <div className="max-w-5xl mx-auto mt-10 px-4 space-y-6">
+
+      
       {/* User Info */}
       <div className="bg-white p-6 rounded-xl shadow-md">
         <h2 className="text-2xl font-bold mb-4">User Info</h2>
@@ -45,6 +53,7 @@ export default function Profile() {
           <strong>Email:</strong> {userData.email}
         </p>
       </div>
+
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -66,6 +75,7 @@ export default function Profile() {
         </div>
       </div>
 
+
       {/* Blog Cards */}
       <div className="bg-white rounded-xl shadow-md p-6">
         <h3 className="text-xl font-bold mb-4">Your Blogs</h3>
@@ -86,7 +96,7 @@ export default function Profile() {
                   </div>
                   <div className="flex items-center gap-2">
                     <FaEye className="text-blue-600" size={22} />
-                    <span className="text-base">{(post.views || 0)/2}</span>
+                    <span className="text-base">{post.views || 0}</span>
                   </div>
                 </div>
               </div>

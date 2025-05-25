@@ -7,6 +7,8 @@ export default function Home() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   
+
+  // Function to fetch posts from the API with optional search query
   const fetchPosts = async (query = "") => {
     setLoading(true);
     try {

@@ -13,6 +13,8 @@ export default function Signup() {
 
   const [error, setError] = useState("");
 
+
+
   // Handle input changes
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -21,10 +23,13 @@ export default function Signup() {
     }));
   };
 
+
+
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+
 
     // Basic validation
     if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
@@ -68,6 +73,9 @@ export default function Signup() {
     }
   };
 
+
+
+  
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="max-w-md w-full p-6 bg-white rounded shadow">

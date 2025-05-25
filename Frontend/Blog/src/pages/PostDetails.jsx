@@ -18,6 +18,8 @@ export default function PostDetail() {
   const [likes, setLikes] = useState(0);
   const [likedByUser, setLikedByUser] = useState(false);
 
+
+  // Fetch the post details and comments when the component mounts
   useEffect(() => {
     const loggedInUser = JSON.parse(localStorage.getItem('user'));
     setUser(loggedInUser);
@@ -43,10 +45,14 @@ export default function PostDetail() {
     fetchPost();
   }, [id]);
 
+
+  
   if (loading) return <div className="p-6 max-w-4xl mx-auto text-gray-500">Loading post...</div>;
   if (error) return <div className="p-6 max-w-4xl mx-auto text-red-500">{error}</div>;
   if (!post) return <div className="p-6 max-w-4xl mx-auto text-red-500">Post not found.</div>;
 
+
+  
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <button onClick={() => navigate('/')} className="mb-4 text-sm text-blue-600 hover:underline">
